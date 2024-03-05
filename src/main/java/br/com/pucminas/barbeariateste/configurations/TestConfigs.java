@@ -20,10 +20,13 @@ public class TestConfigs implements CommandLineRunner {
     private BarbeiroRepository barbeiroRepository;
     private FeedbackRepository feedbackRepository;
     private ServicoRepository servicoRepository;
+    private HorarioRepository horarioRepository;
 
     @Override
     public void run(String... args) throws Exception {
-        Barbeiro barbeiro = new Barbeiro("Carlos", "12345", "abc@d.com", 1L, 5, new Horario());
+        Horario hor = new Horario(1L);
+        horarioRepository.save(hor);
+        Barbeiro barbeiro = new Barbeiro("Carlos", "12345", "abc@d.com", 1L, 5, hor);
         barbeiroRepository.save(barbeiro);
         Servico servico = new Servico("Corte", 5, 50.0, 40, barbeiro, 1L);
         servicoRepository.save(servico);

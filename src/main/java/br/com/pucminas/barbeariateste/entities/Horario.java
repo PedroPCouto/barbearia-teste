@@ -20,7 +20,21 @@ public class Horario {
     @Id
     private Long id;
 
-    public Horario(){
+    public Horario(Long id){
+        this.NOVE_HORAS = false;
+        this.DEZ_HORAS = false;
+        this.ONZE_HORAS = false;
+        this.DOZE_HORAS = false;
+        this.TREZE_HORAS = false;
+        this.QUARTORZE_HORAS = false;
+        this.QUINZE_HORAS = false;
+        this.DEZESSEIS_HORAS = false;
+        this.DEZESSETE_HORAS = false;
+        this.DEZOITO_HORAS = false;
+        this.id = id;
+    }
+
+    public Horario() {
         this.NOVE_HORAS = false;
         this.DEZ_HORAS = false;
         this.ONZE_HORAS = false;
@@ -32,5 +46,4 @@ public class Horario {
         this.DEZESSETE_HORAS = false;
         this.DEZOITO_HORAS = false;
     }
-
 }
